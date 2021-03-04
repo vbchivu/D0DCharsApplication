@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table>
+    <tr>
+        <th>Monster Index</th>
+        <th>Monster Name</th>
+        <th>Monster url</th>
+    </tr>
+    <tr th:each="monster : ${monsters}">
+        <td th:text="${monster.getIndex()}"></td>
+        <td th:text="${monster.getName()}"></td>
+        <td th:text="${monster.getUrl()}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
