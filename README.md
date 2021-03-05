@@ -4,7 +4,6 @@
 <h4>--> saves part of them on an embedded H2 database</h4>
 <h4>--> displays them with some styling</h4>
 
-# zipos
 <h2> Clone the app and enter the folder:</h2> 
 <h5> <code>git clone https://github.com/vchivu14/dod-gamev02.git</h5></code> & <h5><code>cd dod-gamev02</code></h5>
 <h3> Run the app with:</h3>
