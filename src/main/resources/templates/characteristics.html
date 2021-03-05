@@ -10,11 +10,30 @@
     <tr>
         <th>Monster Name</th>
         <th>Monster Size</th>
+        <th>Monster Type</th>
+        <th>Monster Alignment</th>
+        <th>Monster Armor Class</th>
+        <th>Monster Hit Points</th>
+        <th>Monster Strength</th>
+        <th>Monster Dexterity</th>
+        <th>Monster Constitution</th>
+        <th>Monster Intelligence</th>
+        <th>Monster Charisma</th>
     </tr>
     <tr th:each="characteristic : ${characteristics}">
         <td th:text="${characteristic.getName()}"></td>
         <td th:text="${characteristic.getSize()}"></td>
+        <td th:text="${characteristic.getType()}"></td>
+        <td th:text="${characteristic.getAlignment()}"></td>
+        <td th:text="${characteristic.getArmorClass()}"></td>
+        <td th:text="${characteristic.getHitPoints()}"></td>
+        <td th:text="${characteristic.getStrength()}"></td>
+        <td th:text="${characteristic.getDexterity()}"></td>
+        <td th:text="${characteristic.getConstitution()}"></td>
+        <td th:text="${characteristic.getIntelligence()}"></td>
+        <td th:text="${characteristic.getCharisma()}"></td>
     </tr>
+</table>
 
 </body>
 </html>

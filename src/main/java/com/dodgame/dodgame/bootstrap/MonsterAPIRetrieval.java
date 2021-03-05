@@ -1,4 +1,4 @@
-package com.dodgame.dodgame.dao;
+package com.dodgame.dodgame.bootstrap;
 
 import com.dodgame.dodgame.dao.IMonsterDAO;
 import com.dodgame.dodgame.dao.NetworkDAO;
@@ -6,21 +6,30 @@ import com.dodgame.dodgame.dto.MonsterDTO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class MonsterDAO implements IMonsterDAO {
+public class MonsterAPIRetrieval implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     NetworkDAO networkDAO;
+
+    private final IMonsterDAO iMonsterDAO;
+
+    public MonsterAPIRetrieval(IMonsterDAO iMonsterDAO) {
+        this.iMonsterDAO = iMonsterDAO;
+    }
+
+    private final String endpoint = "https://www.dnd5eapi.co/api/monsters/";
 
     /* (non-Javadoc)
     * see com.dodgame.dodgame.dao.IMonsterDAO#fetch(java.lang.String)
      */
-    public List<MonsterDTO> fetchManual(String endpoint) throws Exception {
+    private void fetchManual() throws Exception {
         List<MonsterDTO> allMonsters = new ArrayList<>();
 
         String rawJson = networkDAO.request(endpoint);
@@ -46,7 +55,15 @@ public class MonsterDAO implements IMonsterDAO {
             // add the populated monster to our collection
             allMonsters.add(monster);
         }
-        return allMonsters;
+        iMonsterDAO.saveAll(allMonsters);
     }
 
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+        try {
+            fetchManual();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

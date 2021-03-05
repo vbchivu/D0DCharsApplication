@@ -26,7 +26,17 @@ public class MonsterCharacteristicsDAO implements IMonsterCharacteristicsDAO {
 
         String name = root.getString("name");
         monsterCharacteristicsDTO.setName(name);
+
         monsterCharacteristicsDTO.setSize(root.getString("size"));
+        monsterCharacteristicsDTO.setType(root.getString("type"));
+        monsterCharacteristicsDTO.setAlignment(root.getString("alignment"));
+        monsterCharacteristicsDTO.setArmorClass(root.getInt("armor_class"));
+        monsterCharacteristicsDTO.setHitPoints(root.getInt("hit_points"));
+        monsterCharacteristicsDTO.setStrength(root.getInt("strength"));
+        monsterCharacteristicsDTO.setDexterity(root.getInt("dexterity"));
+        monsterCharacteristicsDTO.setConstitution(root.getInt("constitution"));
+        monsterCharacteristicsDTO.setIntelligence(root.getInt("intelligence"));
+        monsterCharacteristicsDTO.setCharisma(root.getInt("charisma"));
         monsterCharacteristicsDAOList.add(monsterCharacteristicsDTO);
 
         return monsterCharacteristicsDAOList;
