@@ -1,8 +1,8 @@
 # dod-gamev02
 <h4>This is an exercise web app for School</h4>
-<h3>It fetches some characters(Monsters) from a web API</h3>
-<h3>Saves part of them on an embedded H2 database</h3>
-<h3>And displays them with some styling</h3>
+<h4>It fetches some characters(Monsters) from a web API</h4>
+<h4>Saves part of them on an embedded H2 database</h4>
+<h4>And displays them with some styling</h4>
 
 # zipos
 <h2> Clone the app and enter the folder:</h2> 
