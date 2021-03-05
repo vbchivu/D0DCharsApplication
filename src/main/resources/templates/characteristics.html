@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Monster Name</th>
+        <th>Monster Size</th>
+    </tr>
+    <tr th:each="characteristic : ${characteristics}">
+        <td th:text="${characteristic.getName()}"></td>
+        <td th:text="${characteristic.getSize()}"></td>
+    </tr>
+
+</body>
+</html>

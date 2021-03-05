@@ -3,7 +3,14 @@ package com.dodgame.dodgame.dto;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class MonsterDTO {
+    @Id
     @SerializedName("index")
     @Expose
     private String index;

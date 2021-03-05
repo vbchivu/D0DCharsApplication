@@ -1,18 +1,21 @@
 package com.dodgame.dodgame.dao;
 
+import com.dodgame.dodgame.dao.IMonsterDAO;
+import com.dodgame.dodgame.dao.NetworkDAO;
 import com.dodgame.dodgame.dto.MonsterDTO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class MonsterDAO implements IMonsterDAO {
-    @Autowired NetworkDAO networkDAO;
-
+    @Autowired
+    NetworkDAO networkDAO;
 
     /* (non-Javadoc)
     * see com.dodgame.dodgame.dao.IMonsterDAO#fetch(java.lang.String)
