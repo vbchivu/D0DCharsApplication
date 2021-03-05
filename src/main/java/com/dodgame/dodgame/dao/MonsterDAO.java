@@ -13,13 +13,14 @@ import java.util.List;
 public class MonsterDAO implements IMonsterDAO {
     @Autowired NetworkDAO networkDAO;
 
+
     /* (non-Javadoc)
     * see com.dodgame.dodgame.dao.IMonsterDAO#fetch(java.lang.String)
      */
-    public List<MonsterDTO> fetchManual() throws Exception {
+    public List<MonsterDTO> fetchManual(String endpoint) throws Exception {
         List<MonsterDTO> allMonsters = new ArrayList<>();
 
-        String rawJson = networkDAO.request("https://www.dnd5eapi.co/api/monsters/");
+        String rawJson = networkDAO.request(endpoint);
 
         JSONObject root = new JSONObject(rawJson);
 

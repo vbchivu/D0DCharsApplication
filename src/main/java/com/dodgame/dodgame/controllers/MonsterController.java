@@ -11,14 +11,15 @@ public class MonsterController {
     @Autowired
     final IMonsterDAO monsterDAO;
 
+    static final String endpoint = "https://www.dnd5eapi.co/api/monsters/";
+
     public MonsterController(IMonsterDAO monsterDAO) {
         this.monsterDAO = monsterDAO;
     }
 
-
     @RequestMapping("/monsters")
     public String getMonsters(Model model) throws Exception {
-        model.addAttribute("monsters", monsterDAO.fetchManual());
+        model.addAttribute("monsters", monsterDAO.fetchManual(endpoint));
         return "monsters";
     }
 

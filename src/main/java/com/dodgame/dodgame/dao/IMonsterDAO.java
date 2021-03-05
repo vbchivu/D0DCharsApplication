@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface IMonsterDAO {
 
-    List<MonsterDTO> fetchManual() throws Exception;
+    List<MonsterDTO> fetchManual(String endpoint) throws Exception;
 }

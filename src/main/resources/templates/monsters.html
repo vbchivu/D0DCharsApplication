@@ -16,9 +16,16 @@
     <tr th:each="monster : ${monsters}">
         <td th:text="${monster.getIndex()}"></td>
         <td th:text="${monster.getName()}"></td>
-        <td th:text="${monster.getUrl()}"></td>
+        <td><a th:href="@{/(index=${monster.getUrl()})}">Click Me</a></td>
+<!--        <a th:href="@{/index(param1='value1',param2='value2')}"></a>-->
+<!--        <a th:href="@{/(id=${userId})}"> User [[${userId}]]</a> <br/>-->
+
+
+<!--        <a href="monsters/" + "<td th:text="${monster.getIndex()}"></td>">Click me</a>-->
+<!--        <form action="#" th:action="@{${monster.getIndex()}"></form>-->
     </tr>
 </table>
+
 
 
 </body>
