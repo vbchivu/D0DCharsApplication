@@ -3,37 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
 </head>
 <body>
 
-<table>
-    <tr>
-        <th>Monster Name</th>
-        <th>Monster Size</th>
-        <th>Monster Type</th>
-        <th>Monster Alignment</th>
-        <th>Monster Armor Class</th>
-        <th>Monster Hit Points</th>
-        <th>Monster Strength</th>
-        <th>Monster Dexterity</th>
-        <th>Monster Constitution</th>
-        <th>Monster Intelligence</th>
-        <th>Monster Charisma</th>
-    </tr>
-    <tr th:each="characteristic : ${characteristics}">
-        <td th:text="${characteristic.getName()}"></td>
-        <td th:text="${characteristic.getSize()}"></td>
-        <td th:text="${characteristic.getType()}"></td>
-        <td th:text="${characteristic.getAlignment()}"></td>
-        <td th:text="${characteristic.getArmorClass()}"></td>
-        <td th:text="${characteristic.getHitPoints()}"></td>
-        <td th:text="${characteristic.getStrength()}"></td>
-        <td th:text="${characteristic.getDexterity()}"></td>
-        <td th:text="${characteristic.getConstitution()}"></td>
-        <td th:text="${characteristic.getIntelligence()}"></td>
-        <td th:text="${characteristic.getCharisma()}"></td>
-    </tr>
-</table>
+    <h3>This is: <span th:text="${characteristics[0].getName()}"></span></h3>
+
+    <br>
+    <br>
+
+<div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Characteristics</th>
+            <th scope="col">Values</th>
+        </tr>
+        </thead>
+        <tbody th:each="characteristic : ${characteristics}">
+            <tr>
+                <th scope="row">Size</th>
+                <td th:text="${characteristic.getSize()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Type</th>
+                <td th:text="${characteristic.getType()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Alignment</th>
+                <td th:text="${characteristic.getAlignment()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Armor Class</th>
+                <td th:text="${characteristic.getArmorClass()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Hit Points</th>
+                <td th:text="${characteristic.getHitPoints()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Strength</th>
+                <td th:text="${characteristic.getStrength()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Dexterity</th>
+                <td th:text="${characteristic.getDexterity()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Constitution</th>
+                <td th:text="${characteristic.getConstitution()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Intelligence</th>
+                <td th:text="${characteristic.getIntelligence()}"></td>
+            </tr>
+            <tr>
+                <th scope="row">Charisma</th>
+                <td th:text="${characteristic.getCharisma()}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br>
+    <a href="/monsters" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Go Back</a>
+
 
 </body>
 </html>

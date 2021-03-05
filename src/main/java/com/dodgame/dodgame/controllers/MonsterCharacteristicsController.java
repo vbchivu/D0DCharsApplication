@@ -20,7 +20,7 @@ public class MonsterCharacteristicsController {
         this.characteristicsDAO = characteristicsDAO;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/api")
     public String index (@RequestParam(value = "index") String index, Model model) throws Exception {
         model.addAttribute("characteristics", characteristicsDAO.fetchCharacteristics(endpoint+index));
         return "characteristics";
