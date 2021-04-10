@@ -1,5 +1,5 @@
 # dod-gamev02 <h5>https://dod-example.herokuapp.com/</h5>
-<h3>This is an exercise web app for KEA Copenhagen, Computer Science</h3>
+<h3>This is an exercise web app for KEA Copenhagen, Computer Sciene</h3>
 <h3>What does it d0?</j3>
 <h4>--> fetches some game-characters from a REST API</h4>
 <h4>--> saves part of them on a PSQL database</h4>
